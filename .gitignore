@@ -52,3 +52,9 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+# MP3's (unless you want to share your own track under MIT)
+*.mp3
+
+# Hidden files
+.*
+!.gitignore

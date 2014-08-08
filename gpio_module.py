@@ -20,7 +20,7 @@ class GPIO_Module(object):
     def setup(self):
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(self.SHOW_GPIO_WARNINGS)
-        self.initialized = True
+        GPIO_Module.initialized = True
 
     @staticmethod
     def onException(type, value, traceback):

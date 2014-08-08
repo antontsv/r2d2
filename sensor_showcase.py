@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser(description='Sensor showcase')
 parser.add_argument('-a','--all', action="store_true", help='Show all demos')
 parser.add_argument('-m','--motion', action="store_true", help='Motion sensor demo')
 parser.add_argument('-l','--led', action="store_true", help=u'Led demo')
-parser.add_argument('-d','--distance', action="store_true", help=u'Led demo')
+parser.add_argument('-d','--distance', action="store_true", help=u'Distance measurement demo')
 args = parser.parse_args()
 
 def header(title='Some demo'):

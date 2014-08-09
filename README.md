@@ -16,6 +16,13 @@ Hardware
 6. HC-SR04 ultrasonic sensor (with 1KΩ, or better have [voltage divider](http://en.wikipedia.org/wiki/Voltage_divider))
 7. X-mini speaker
 
+Pinout diagram
+==============
+
+![Raspberry Pi B+ pins](http://antontsv.github.io/r2d2/img/raspberry-pi-b-plus-pinout.png "Pins")
+
+Image is taken from this blog post: [Raspberry Pi B+ GPIO Header Details And Pinout](http://www.raspberrypi-spy.co.uk/2014/07/raspberry-pi-b-gpio-header-details-and-pinout/)
+
 Sensors & their demo run
 ========================
 
@@ -38,6 +45,11 @@ Also keep in mind connection polarity: usually longer leg is connected to power 
 
 ![5V LED](https://antontsv.github.io/r2d2/img/blinking-red-led-5v.jpg "Let it shine!")
 
+**Connection pins for LED:**
+ * Power: #12 aka "GPIO18"
+ * Ground: #9
+
+
 ```sh
 # Runs for 30 seconds (5 seconds on / 3 seconds off cycles)
 sudo ./sensor_showcase.py --led
@@ -54,6 +66,11 @@ Also for R2D2 I plan to narrow this sensor's field of vision by painting most of
 
 ![HC-SR501-PIR](https://antontsv.github.io/r2d2/img/HC-SR501-PIR.jpg "Hey, you are moving")
 
+**Connection pins for PIR sensor:**
+* VCC: #4
+* OUT: #26 aka "GPIO7"
+* GND: #39
+
 ```sh
 # Runs for 30 seconds (prints message if motion is detected)
 sudo ./sensor_showcase.py --motion
@@ -69,6 +86,12 @@ Also I hope you are not going to submerge the sensor in water or use it the mois
 See that purple wire on the pictures.
 
 ![ultrasonic sensor](https://antontsv.github.io/r2d2/img/HC-SR04-ultrasonic-sensor.jpg "You are standing right here, I can hear you")
+
+**Connection pins for ultrasonic sensor:**
+* Gnd: #34
+* Echo: #13 aka "GPIO27" (+ 1KΩ resistor)
+* Trig: #11 aka "GPIO17"
+* Vcc: #2
 
 ```sh
 # Runs for 30 seconds (prints average distance over period of 3 seconds)

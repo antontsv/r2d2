@@ -33,13 +33,13 @@ class DistanceDetector (GPIO_Module):
         echo_stop = -1
 
         while time.time() - start < TIME_LIMIT_SEC:
-            if not GPIO.input(self.ECHO_PIN):
+            if GPIO.input(self.ECHO_PIN) != 0:
                 echo_start = time.time()
                 break
 
         start = time.time()
         while time.time() - start < TIME_LIMIT_SEC:
-            if not GPIO.input(self.ECHO_PIN):
+            if GPIO.input(self.ECHO_PIN) == 0:
                 echo_stop = time.time()
                 break
 

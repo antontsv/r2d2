@@ -75,4 +75,4 @@ if args.all or args.distance:
                 collective += reading
             else:
                 false_count += 1
-        print "Distance measured over interval of %d sec: %f cm (pos: %d, false: %d)" % (INTERVAL_SEC, collective/pos, pos, false_count)
+        print "Distance measured over interval of %d sec: %f cm (pos: %d, false: %d)" % (INTERVAL_SEC, collective/pos if pos > 0 else -1, pos, false_count)

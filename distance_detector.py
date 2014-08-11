@@ -17,6 +17,10 @@ class DistanceDetector (GPIO_Module):
         GPIO.output(self.TRIG_PIN, GPIO.LOW)
 
     def measure(self):
+
+        # Let the sensor to rest a bit:
+        time.sleep(0.1)
+
         # Tigger sound pulse:
         GPIO.output(self.TRIG_PIN, True)
 
@@ -49,3 +53,20 @@ class DistanceDetector (GPIO_Module):
         # distance = speed of sound / 2 * time diff (in centimeters)
         return (echo_stop - echo_start) * 17014
 
+    def distance_over_time(self, time_interval):
+        pos_count = 0
+        false_count = 0
+        collective = 0
+        current_measure_start=time.time()
+        while time.time() - current_measure_start < time_interval:
+            reading = self.measure()
+            if reading > 0:
+                pos_count += 1
+                collective += reading
+            else:
+                false_count += 1
+
+        if(pos_count > false_count * 2):
+            return collective/pos_count
+        else:
+            return -1

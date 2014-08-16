@@ -29,7 +29,3 @@ class R2D2:
                 print "Object is too far: %d cm" % distance
             self.led.dark()
 
-
-
-robot = R2D2()
-robot.run()

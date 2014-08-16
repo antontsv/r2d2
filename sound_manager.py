@@ -14,7 +14,7 @@ from subprocess import call
 class SoundManager ():
 
     SOUND_PLAYER   = 'mpg123'
-    SOUNDS_DIR     = 'sounds'
+    SOUNDS_DIR     = os.path.dirname(__file__) + '/sounds'
     SOUND_FILE_EXT = 'mp3'
 
     sound_list = []

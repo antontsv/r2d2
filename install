@@ -13,11 +13,13 @@ LOCATION=`pwd`
 popd > /dev/null
 
 verbose_code(){
-    if [ $? -eq 0 ];then
+    code=$?
+    if [ $code -eq 0 ];then
         echo Ok
     else
         echo Fail
     fi;  
+    return $code
 }
 
 echo -n "Installing $SERVICE_NAME daemon..."
@@ -90,6 +92,25 @@ verbose_code
 
 chmod +x /etc/init.d/$SERVICE_NAME
 
-echo "Adding $SERVICE_NAME to startup..."
+echo -n "Adding $SERVICE_NAME to startup..."
 update-rc.d $SERVICE_NAME defaults
+verbose_code
+
+echo "Installing packages..."
+apt-get install alsa-base fail2ban python2.7 mpg123 espeak monit libssl-dev libavahi-client-dev libasound2-dev
+
+which pip 1>/dev/null 2>&1
+if [ $? -ne 0 ];then
+    echo -n "Downloading get-pip..."
+    curl -k -o get-pip.py https://bootstrap.pypa.io/get-pip.py
+    verbose_code
+    if [ $? -eq 0 ];then
+        echo -n "Installing pip..."
+        python get-pip.py
+        verbose_code
+    fi;
+fi;
+
+echo -n "Installing required pip packages..."
+pip install python-daemon pyttsx alsaaudio
 verbose_code

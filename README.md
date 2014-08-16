@@ -23,6 +23,15 @@ Pinout diagram
 
 Image is taken from this blog post: [Raspberry Pi B+ GPIO Header Details And Pinout](http://www.raspberrypi-spy.co.uk/2014/07/raspberry-pi-b-gpio-header-details-and-pinout/)
 
+Installation
+============
+
+Install necessary packages and install as daemon/startup process:
+
+```sh
+sudo ./install
+```
+
 Sensors & their demo run
 ========================
 

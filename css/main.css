@@ -1,0 +1,60 @@
+@import url(http://fonts.googleapis.com/css?family=News+Cycle:400,700);
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font: 700 1em "News Cycle", sans-serif;
+    letter-spacing:.15em;
+    color: #ff6;
+    background: #000;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+}
+
+.desc{
+    z-index: 20;
+    position: relative
+}
+
+
+#overview {
+    margin: 0 auto;
+    clear: both;
+    text-align: center;
+    color: #00FFFF;
+}
+
+#sensors{
+    margin: 0 auto;
+    text-align: center;
+}
+
+#orig{
+    float: left;
+    margin-left: 25%; 
+}
+
+#transformed{
+    float: right;
+    margin-right: 25%; 
+}
+
+#arrow{
+    color: #00FFFF;
+    width: 100%;
+    font-size: 80px;
+    top:75px;
+    position: absolute;
+    min-width: 400px;
+}
+
+#arrow h1{
+    margin: 0 auto;
+}
+#arrow a{
+    font-size: 16px;
+    color: white;
+}

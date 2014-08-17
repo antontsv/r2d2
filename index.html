@@ -1,14 +1,62 @@
 <html>
-<head>
-<title>What a raspberry pi can do to a lego r2d2?</title>
-</head>
+    <head>
+        <title>Raspberry pi powers lego R2D2</title>
+        <link type="text/css" rel="stylesheet" href="css/main.css" />
+        <link type="text/css" rel="stylesheet" href="css/sky.css" />
+        <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <script src="js/zoomple.js" type="text/javascript"></script>
+        <link href="css/zoomple.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.zoomple').zoomple({
+                    bgColor: '#000',
+                    offset: {x: 0, y: 0},
+                    zoomWidth: 200,
+                    zoomHeight: 200,
+                    roundedCorners: true
+                });
+                $('.zoomple2').zoomple({
+                    bgColor: '#000',
+                    offset: {x: 0, y: 0},
+                    zoomWidth: 100,
+                    zoomHeight: 100,
+                    roundedCorners: true
+                });
+            })
+        </script>
+    </head>
 
-<body>
-<h1> Mission: add some fun features to lego R2D2</h1>
+    <body>
+        <div class="desc">
 
-<img src="img/r2d2.jpg" alt="r2d2"/>
+            <div id="orig">
+                <h1>Lego R2D2</h1>
+                <a href="img/orig/r2d2.orig.png" class="zoomple"><img src="img/r2d2.png" alt="r2d2"/></a>
+            </div>
+            <div id="arrow">
+                <h1>&#8674;</h1>
+                <a href="https://github.com/antontsv/r2d2">See the Source, Luke Skywalker! </a>
+            </div>
+            <div id="transformed">
+                <h1>Result look</h1>
+                <a href="img/orig/transformed_r2d2.orig.png" class="zoomple"><img src="img/transformed_r2d2.png" alt="transformed r2d2"/></a>
+            </div>
 
-<h2>Solution: raspberry pi, sensors and leds</h2>
-<p>Stay tuned for updates...</p>
-</body>
+            <div id="overview">
+                <h1>Added: raspberry pi, sensors and LED</h1>
+                <a href="img/orig/all-sensors-setup.orig.jpg" class="zoomple"><img src="img/all-sensors-setup.jpg" alt="Setup &amp connections" /> </a></div>
+            <div id="sensors">
+                <a href="img/orig/HC-SR04-ultrasonic-sensor.orig.jpg"><img src="img/HC-SR04-ultrasonic-sensor.jpg" alt="Ultrasonic sensor" /> </a>
+                <a href="img/orig/HC-SR501-PIR.orig.jpg"><img src="img/HC-SR501-PIR.jpg" alt="PIR sensor" /> </a>
+                <a href="img/orig/blinking-red-led-5v.orig.jpg"><img src="img/blinking-red-led-5v.jpg" alt="Red LED" /> </a>
+            </div>
+        </div>
+
+
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        <div class="clouds"></div>
+
+
+    </body>
 </html>

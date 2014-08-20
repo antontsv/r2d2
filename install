@@ -114,3 +114,9 @@ fi;
 echo -n "Installing required pip packages..."
 pip install python-daemon pyttsx alsaaudio
 verbose_code
+
+echo -n "Configure modprobe 8192cu (for wifi)..."
+cat > /etc/modprobe.d/8192cu.conf  << _BODY_
+options 8192cu rtw_power_mgnt=0 rtw_enusbss=0
+_BODY_
+verbose_code
